@@ -103,7 +103,9 @@ Rule of thumb: **done → CHANGELOG · decision → ADR · task → commit.** RO
 
 - Surface choices as ADR drafts; don't decide architecture unilaterally.
 - LangGraph/LangChain v1 are recent — verify APIs against the Docs-langchain MCP (below), not memory.
-- Commit small, one logical unit; resist large generated diffs.
+- Commit small, one logical unit; resist large generated diffs. Messages follow
+  **Conventional Commits** — `type(scope): summary` (e.g. `feat:`, `fix:`, `docs:`, `chore:`,
+  `refactor:`, `test:`). No Claude / `Co-Authored-By` signature.
 - When two approaches are genuinely balanced, ask rather than guess.
 - Pin library versions deliberately (see `pyproject.toml`) — don't let tooling choose them.
 - Manage dependencies with `uv add` / `uv remove` (keeps `pyproject.toml` + `uv.lock` in sync).
