@@ -35,7 +35,8 @@ Pick the recipe that matches the task.
 `notebook-first → ADR → study the API → implement → test → verify → gate-check`
 1. **Notebook-first** — draft the concept section (why before how) before any `src/` code.
    If you can't explain why the pattern exists, you don't understand it well enough to ship.
-2. **ADR** — write it for the key design decision (see recipe B) before coding.
+2. **ADR** — if the work involves a non-obvious or hard-to-reverse decision, draft it first
+   (recipe B). Skip when there's no real decision to record.
 3. **Study the API** — consult the **Docs-langchain MCP** (see below) for any LangGraph/
    LangChain API used heavily; read the source when needed. Don't call APIs in non-idiomatic
    AI-generated ways.
@@ -66,7 +67,7 @@ Common failure modes · Production considerations · References · Exercises.
 - [ ] Critical paths tested; CI green
 - [ ] Module section in `docs/ARCHITECTURE.md` updated
 - [ ] Module notebook runs end-to-end without errors
-- [ ] ≥1 ADR for the module's key decision
+- [ ] An ADR for any non-obvious or hard-to-reverse decision the module introduced (none needed if it made none)
 - [ ] LangSmith trace link for a happy-path run in the PR
 - [ ] Author has personally used the feature end-to-end
 

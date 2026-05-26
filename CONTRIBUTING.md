@@ -22,7 +22,7 @@ discipline below applies to the author and to any contributor.
 - Critical paths tested; CI green
 - Module section in `docs/ARCHITECTURE.md` updated
 - Module notebook runs end-to-end without errors
-- At least one ADR for the module's key decision
+- An ADR for any non-obvious or hard-to-reverse decision (skip if the module made none)
 - A LangSmith trace link for a happy-path run in the PR description
 - Author has personally used the feature end-to-end
 
