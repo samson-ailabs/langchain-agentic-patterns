@@ -9,7 +9,6 @@ dist/
 # Virtual envs / uv
 .venv/
 venv/
-.python-version
 
 # Environment / secrets
 .env
