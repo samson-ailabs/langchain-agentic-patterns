@@ -4,7 +4,7 @@
 
 <!-- Hero gif / screenshot goes here once Ship 1 is live -->
 
-> **Status:** 🚧 Phase 0 (Study). No production code yet. See [ROADMAP.md](ROADMAP.md).
+> **Status:** 🚧 Phase 1 — Foundation MVP (building toward Ship 1). See [ROADMAP.md](ROADMAP.md).
 
 ## What it does
 
@@ -17,8 +17,8 @@
 
 ## Quick start
 
-> 🚧 **Not runnable yet — Phase 0 (study).** There is no application code or container setup
-> in the repo. The one-command start below is the *target* for **Ship 1** (Week 5), when
+> 🚧 **Not runnable yet.** There is no application code or container setup in the repo yet.
+> The one-command start below is the *target* for **Ship 1** (Week 5), when
 > `docker-compose.yml`, the API, and the UI land.
 
 ```bash
@@ -36,7 +36,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full overview and modul
 ## Tutorial notebooks
 
 Eleven notebooks are **planned** — one per module, each explaining *why* a pattern exists
-before *how* to build it. None are published yet (Phase 0); see [ROADMAP.md](ROADMAP.md) for the schedule.
+before *how* to build it. None are published yet; see [ROADMAP.md](ROADMAP.md) for the schedule.
 
 | # | Notebook | Module(s) |
 |---|----------|-----------|
@@ -62,11 +62,11 @@ before *how* to build it. None are published yet (Phase 0); see [ROADMAP.md](ROA
 ## Deployment
 
 Planned for Ship 1 / Ship 3: a Docker Compose setup and a hosted demo, to be documented in
-`docs/DEPLOYMENT.md` (not written yet — Phase 0).
+`docs/DEPLOYMENT.md` (not written yet).
 
 ## Tech stack (planned)
 
-Target stack for the full build. Phase 0 has only **LangGraph + LangChain** installed; the rest lands per [ROADMAP.md](ROADMAP.md).
+Target stack for the full build. Only **LangGraph + LangChain** are installed so far; the rest lands per [ROADMAP.md](ROADMAP.md).
 
 | Layer | Component |
 |-------|-----------|

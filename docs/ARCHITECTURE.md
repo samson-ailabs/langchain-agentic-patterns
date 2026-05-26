@@ -72,5 +72,4 @@ messages around the LLM call.
 
 ## Decision records
 
-Significant design choices are recorded as ADRs in `docs/decisions/`. To be written
-starting in Phase 0.
+Significant design choices are recorded as ADRs in `docs/decisions/` — ADR-0001 onward.

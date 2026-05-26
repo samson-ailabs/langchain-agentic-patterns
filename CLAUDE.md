@@ -21,7 +21,8 @@ skips understanding, it is the wrong path here.
 ## Step 0 — Orient (do this before every task)
 
 1. **Check the phase** in `ROADMAP.md` and respect its constraints.
-   - ⚠️ **Phase 0 (current): NO production code in `src/`.** Study, ADRs, and docs only.
+   - Phase 0 = study / ADRs / docs only (no `src/` code); Phase 1+ = build per the per-task
+     workflow. ROADMAP's `Current phase` line is the source of truth.
 2. **Identify the module** (M1–M11) the task belongs to; re-read its section in
    `docs/ARCHITECTURE.md`.
 3. **Decide if an ADR is needed.** If the choice is non-obvious, hard to reverse, or has a

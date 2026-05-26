@@ -2,21 +2,20 @@
 
 12 weeks, full-time. Three public ships. No silent stretch longer than 4 weeks.
 
-> **Current phase: Phase 0 — Study (Weeks 1–2).** Move this line at each phase boundary.
+> **Current phase: Phase 1 — Foundation MVP (Weeks 3–5).** Move this line at each phase boundary.
 
-## Phase 0 — Study (Weeks 1–2)
+## Phase 0 — Study (Weeks 1–2) · ✅ closed
 
-**No production code is written in this phase.** Read the canonical sources for reference; capture key decisions as ADRs.
+Repo skeleton + founding decision in place. Understanding is built by doing from Phase 1 on
+(no separate study-notes deliverable).
 
 - [x] Public repo created with skeleton (README, LICENSE, ROADMAP, .gitignore, pyproject)
 - [x] ADR-0001 — LangGraph primitives over `deepagents`
-- [ ] Deep Agents source kept locally under `refs/` (gitignored) — consult while building
-- [ ] Reference LangGraph / LangChain v1 docs and Onyx (blog/docs/product) as needed
-- [ ] ADR-0002 (middleware order) & ADR-0003 (sub-agent isolation) — when building M1 / M4
-- [ ] Accounts: LangSmith, Tavily, OpenAI, Anthropic, deploy host
-- [ ] First public post: "what I'm building, why, public roadmap"
+- [x] Deep Agents + Onyx cloned locally under `refs/` (gitignored) for reference
+- [x] Accounts (LangSmith, Tavily, OpenAI, Anthropic, host)
+- [x] First public post
 
-**Output:** public repo skeleton + ADR-0001 (more as decisions arise). Understanding is built task-by-task during implementation, not as a separate study deliverable.
+> ADR-0002 (middleware order) & ADR-0003 (sub-agent isolation) get written when building M1 / M4.
 
 ## Phase 1 — Foundation MVP (Weeks 3–5) → **Ship 1**
 
