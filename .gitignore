@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual envs / uv
+.venv/
+venv/
+.python-version
+
+# Environment / secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Data / artifacts
+chroma/
+*.sqlite3
+data/
+storage/
+evals/reports/*.json
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Tooling caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Optional: private study notes (uncomment to keep them local)
+# notes/
