@@ -6,20 +6,17 @@
 
 ## Phase 0 — Study (Weeks 1–2)
 
-**No production code is written in this phase.** Read the canonical sources, take notes, write the first ADRs.
+**No production code is written in this phase.** Read the canonical sources for reference; capture key decisions as ADRs.
 
-- [ ] Public repo created with skeleton (README, LICENSE, ROADMAP, .gitignore, pyproject.toml)
-- [ ] `notes/study/` and `notes/onyx-features/` initialized
-- [ ] Read Deep Agents source end-to-end → pattern notes in `notes/study/`
-- [ ] Read `open_deep_research` → phase-structure notes
-- [ ] Read Onyx Deep Research blog series → behavior notes in `notes/onyx-features/`
-- [ ] Read LangGraph v1 docs (state, persistence, streaming, interrupt, subgraphs)
-- [ ] Read LangChain v1 middleware docs
-- [ ] ADR-0001 (LangGraph over deepagents), ADR-0002 (middleware order), ADR-0003 (sub-agent isolation)
-- [ ] Accounts: LangSmith, Tavily, OpenAI, Anthropic, Railway/Fly.io
+- [x] Public repo created with skeleton (README, LICENSE, ROADMAP, .gitignore, pyproject)
+- [x] ADR-0001 — LangGraph primitives over `deepagents`
+- [ ] Deep Agents source kept locally under `refs/` (gitignored) — consult while building
+- [ ] Reference LangGraph / LangChain v1 docs and Onyx (blog/docs/product) as needed
+- [ ] ADR-0002 (middleware order) & ADR-0003 (sub-agent isolation) — when building M1 / M4
+- [ ] Accounts: LangSmith, Tavily, OpenAI, Anthropic, deploy host
 - [ ] First public post: "what I'm building, why, public roadmap"
 
-**Output:** ~10 study notes, ~10 Onyx feature notes, ADRs 0001–0003, README skeleton.
+**Output:** public repo skeleton + ADR-0001 (more as decisions arise). Understanding is built task-by-task during implementation, not as a separate study deliverable.
 
 ## Phase 1 — Foundation MVP (Weeks 3–5) → **Ship 1**
 

@@ -38,5 +38,5 @@ htmlcov/
 .idea/
 .DS_Store
 
-# Optional: private study notes (uncomment to keep them local)
-# notes/
+# Local-only reference clones (read for study; never tracked)
+refs/
