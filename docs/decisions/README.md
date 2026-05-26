@@ -36,5 +36,7 @@ Sources that informed the decision (cite by file:line where applicable).
 
 ## Index
 
-_None written yet._ First up in Phase 0: ADR-0001 (LangGraph primitives over `deepagents`),
-ADR-0002 (middleware execution order), ADR-0003 (sub-agent isolation rule).
+- [ADR-0001](0001-langgraph-primitives-over-deepagents.md) — Build from LangGraph/LangChain primitives, not `deepagents` · **Accepted**
+
+Written when their decisions become real (not upfront): middleware execution order (when
+building M1), sub-agent isolation mechanics (when building M4).
