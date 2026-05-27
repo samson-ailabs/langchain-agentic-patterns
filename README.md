@@ -83,7 +83,10 @@ Target stack for the full build. Only **LangGraph + LangChain** are installed so
 
 ## Acknowledgments
 
-This project draws on two canonical references in agent engineering:
+This project draws on three references in agent engineering:
+
+- **Concept reference — [*Agentic Design Patterns* (Antonio Gulli)](https://link.springer.com/book/10.1007/978-3-032-01402-3)**:
+  the agentic patterns and the reasoning behind them.
 
 - **Architectural reference — [LangChain Deep Agents](https://github.com/langchain-ai/deepagents)**: middleware stack,
   BackendProtocol abstraction, sub-agent isolation, auto-summarization patterns.

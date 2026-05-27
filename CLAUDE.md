@@ -38,9 +38,10 @@ Pick the recipe that matches the task.
    If you can't explain why the pattern exists, you don't understand it well enough to ship.
 2. **ADR** — if the work involves a non-obvious or hard-to-reverse decision, draft it first
    (recipe B). Skip when there's no real decision to record.
-3. **Study the API** — consult the **Docs-langchain MCP** (see below) for any LangGraph/
-   LangChain API used heavily; read the source when needed. Don't call APIs in non-idiomatic
-   AI-generated ways.
+3. **Study the references** — ground the work, don't improvise: read the *concept* (Agentic
+   Design Patterns book), study a *production implementation* (Deep Agents source), and verify
+   the *current API* (Docs-langchain MCP). Analyze fit, then build from understanding. See
+   "Reference materials" below. Don't call APIs in non-idiomatic AI-generated ways.
 4. **Implement** — complete, no stubs/TODOs/mocks; match existing conventions; small commits.
 5. **Test** — write tests for critical paths *as you go*, not after.
 6. **Verify** — run the notebook end-to-end; run module tests; trigger the feature manually
@@ -112,6 +113,22 @@ Rule of thumb: **done → CHANGELOG · decision → ADR · task → commit.** RO
 - Pin library versions deliberately (see `pyproject.toml`) — don't let tooling choose them.
 - Manage dependencies with `uv add` / `uv remove` (keeps `pyproject.toml` + `uv.lock` in sync).
   **Never use `uv pip`.** To inspect installed versions, use `uv tree` or read `uv.lock`.
+
+## Reference materials — read, analyze, then implement
+
+Ground every task in the references; don't improvise. For each task: read the material,
+understand *why*, analyze how it fits our use case, then write your own code — never copy
+(see Hard rules). The layers (all local under `refs/`, gitignored):
+
+- **Concept / patterns** → the *Agentic Design Patterns* book (markdown chapters) at
+  `refs/agentic-design-patterns/` (e.g. `chapter-06-planning.md`) — the *why* of a pattern.
+- **Production implementation** → Deep Agents source at `refs/deepagents/` — how the pattern is
+  actually built (read, don't copy; ADR-0001).
+- **Product behavior** → Onyx at `refs/onyx/` (+ its docs/blog) — what a credible agent does.
+- **Current API** → the Docs-langchain MCP (below) — verify LangGraph/LangChain v1 signatures.
+
+Flow per task: **concept → implementation → API → analyze fit → build from understanding.**
+Refresh a clone when needed: `git -C refs/<name> fetch --depth 1 origin && git -C refs/<name> reset --hard @{u}`.
 
 ## LangChain / LangGraph API — consult the Docs-langchain MCP
 
