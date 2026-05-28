@@ -30,23 +30,50 @@ skips understanding, it is the wrong path here.
 
 ## Per-task workflows
 
+**Execution discipline — one stage at a time, tracked.** Each task uses a recipe below.
+At the start of a non-trivial task, create a TodoWrite list mirroring the recipe's
+stages, and progress through them ONE STAGE AT A TIME: do the stage, mark it done,
+present what was done + the next stage, and **wait for the human's go-ahead** before
+continuing. Don't chain stages — the human learns each pattern at the stage boundary
+and keeps control of the code. Especially: no `src/` code lands without explicit
+approval at the implementation stage.
+
 Pick the recipe that matches the task.
 
 ### A · New module or feature
-`notebook-first → ADR → study the API → implement → test → verify → gate-check`
-1. **Notebook-first** — draft the concept section (why before how) before any `src/` code.
-   If you can't explain why the pattern exists, you don't understand it well enough to ship.
-2. **ADR** — if the work involves a non-obvious or hard-to-reverse decision, draft it first
-   (recipe B). Skip when there's no real decision to record.
-3. **Study the references** — ground the work, don't improvise: read the *concept* (Agentic
-   Design Patterns book), study a *production implementation* (Deep Agents source), and verify
-   the *current API* (Docs-langchain MCP). Analyze fit, then build from understanding. See
+`study refs → ADR? → notebook (concept) → src/ → tests → notebook (complete) → verify → docs → gate-check`
+
+1. **Study the references** — ground the work, don't improvise: read the *concept* (Agentic
+   Design Patterns book), study a *production implementation* (Deep Agents source), and
+   verify the *current API* (Docs-langchain MCP). Analyze fit *before* any code. See
    "Reference materials" below. Don't call APIs in non-idiomatic AI-generated ways.
-4. **Implement** — complete, no stubs/TODOs/mocks; match existing conventions; small commits.
-5. **Test** — write tests for critical paths *as you go*, not after.
-6. **Verify** — run the notebook end-to-end; run module tests; trigger the feature manually
+
+2. **ADR** — if the work involves a non-obvious or hard-to-reverse decision, draft it now,
+   *before* coding (recipe B). Skip when there's no real decision to record.
+
+3. **Notebook — concept + sketch** — write the concept, reasoning, and a minimal end-to-end
+   sketch *in your own words*. The notebook here is for *understanding*, **not** production
+   code. If you can't explain why the pattern exists, you don't understand it well enough
+   to ship.
+
+4. **Implement in `src/`** — production-shaped code, written *from* the understanding built
+   in the notebook — **never copy-pasted from it**. Match existing conventions; no
+   stubs/TODOs/mocks; small commits.
+
+5. **Test** — cover critical paths; write tests *as you go* alongside `src/`, not after.
+
+6. **Notebook — complete** — point the notebook's "Implementation" cells at `src/` via
+   `import`, and use the "Production considerations" section to record what changed between
+   the sketch (step 3) and the production code (step 4).
+
+7. **Verify** — run the notebook end-to-end; run module tests; trigger the feature manually
    end-to-end once; capture a LangSmith trace.
-7. **Gate-check** — confirm all quality gates below before calling it done.
+
+8. **Document** — update the module's section in `docs/ARCHITECTURE.md`: what now exists,
+   key files, role in the stack — concise, *no duplication* of notebook content. Principle:
+   **docs describe what exists; ADRs explain why.**
+
+9. **Gate-check** — confirm all quality gates below before calling it done.
 
 ### B · A design decision / choosing between approaches
 **Do not silently pick.** Draft an ADR first — `Context · Decision · Alternatives considered ·
@@ -58,10 +85,16 @@ an anti-pattern.
 Root cause, never workaround. `Reproduce → hypothesis → fix → verify`. Never skip, disable,
 or comment out a test to make things pass.
 
-### D · Writing a notebook
-Fixed structure, every code cell commented with the *why*:
-What you'll learn · Why this matters · Concept · Implementation · Exploration ·
-Common failure modes · Production considerations · References · Exercises.
+## Notebook structure
+
+The notebook in recipe A follows this fixed structure (every code cell carries a comment
+explaining the *why*):
+
+**What you'll learn · Why this matters · Concept · Implementation · Exploration · Common
+failure modes · Production considerations · References · Exercises.**
+
+The *Implementation* cells `import` from `src/`; *Production considerations* records what
+changed between the notebook sketch (recipe A step 3) and the production code (step 4).
 
 ## Quality gates (a module is NOT done until ALL pass)
 
@@ -128,7 +161,8 @@ understand *why*, analyze how it fits our use case, then write your own code —
 - **Current API** → the Docs-langchain MCP (below) — verify LangGraph/LangChain v1 signatures.
 
 Flow per task: **concept → implementation → API → analyze fit → build from understanding.**
-Refresh a clone when needed: `git -C refs/<name> fetch --depth 1 origin && git -C refs/<name> reset --hard @{u}`.
+Refresh refs at the start of each new module (skip if recently refreshed; don't refresh
+mid-module to avoid drift): `git -C refs/<name> fetch --depth 1 origin && git -C refs/<name> reset --hard @{u}`.
 
 ## LangChain / LangGraph API — consult the Docs-langchain MCP
 
